@@ -8,7 +8,7 @@ export type Location = {
 };
 
 export const getLatestLocation = async () => {
-  'use server';
+  // 'use server';
 
   const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL as string,
@@ -25,7 +25,7 @@ export const getLatestLocation = async () => {
 };
 
 export const createLocation = async (location: Location) => {
-  'use server';
+  // 'use server';
 
   const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL as string,
