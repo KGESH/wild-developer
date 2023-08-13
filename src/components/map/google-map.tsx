@@ -43,7 +43,7 @@ export default function GoogleMap({
   const [googleMap, setGoogleMap] = useState<google.maps.Map>();
   const onLoad = (map: google.maps.Map) => setGoogleMap(map);
 
-  const { isPolylineLoaded, isInfoLoaded, onPolylineLoad, distanceKm } = usePolylineZoomOut({
+  const { isPolylineLoaded, isDistanceInfoLoaded, onPolylineLoad, distanceKm } = usePolylineZoomOut({
     googleMap,
     ownerPos,
     clientPos,
