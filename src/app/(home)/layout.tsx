@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getLatestLocation, Location } from '@/app/(home)/api/service';
+import { getLatestLocation, Location } from '@/components/api/service';
 import GoogleMapWithMarkers from '@/components/map/google-map-wrapper';
 
 export const metadata: Metadata = {
@@ -13,16 +13,11 @@ const getLocation = async () => {
 
 export default async function Layout({ children }: { children: React.ReactNode }) {
   const myLastLocation = await getLocation();
-  const clientLocation: Location = {
-    lat: 55,
-    lng: 83,
-  };
 
   return (
     <main className="flex flex-col items-center">
       {children}
       <GoogleMapWithMarkers ownerLocation={myLastLocation} />
-      {/*<GoogleMap ownerLocation={myLastLocation} clientLocation={clientLocation} />*/}
     </main>
   );
 }
