@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Location } from '@/app/(home)/api/service';
+import { Location } from '@/components/api/service';
 
 export const useClientGeolocation = () => {
   const [clientLocation, setClientLocation] = useState<Location>();
