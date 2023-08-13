@@ -7,6 +7,8 @@ export type Location = {
 };
 
 export const getLatestLocation = async () => {
+  'use server';
+
   const supabase = createServerActionClient({ cookies });
   const { data: location } = await supabase
     .from('locations')
@@ -19,6 +21,8 @@ export const getLatestLocation = async () => {
 };
 
 export const createLocation = async (location: Location) => {
+  'use server';
+
   const supabase = createServerActionClient({ cookies });
   const { data } = await supabase.from('locations').insert(location);
   return data;
