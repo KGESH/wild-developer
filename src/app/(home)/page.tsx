@@ -38,7 +38,7 @@ export default function Home() {
   return (
     <section className="flex flex-col items-center justify-center text-center h-full px-4 md:px-10">
       <div className="max-w-3xl">
-        <h1 className="text-5xl md:text-7xl font-semibold text-gray-100 mb-4">Hi, I'm Wild Developer</h1>
+        <h1 className="text-5xl md:text-7xl font-semibold text-gray-100 mb-4">Hi, I&#39;m Wild Developer</h1>
         <h2 className="text-3xl md:text-4xl font-semibold text-blue-500 mb-4">Full Stack Freelancer Digital Nomad</h2>
         <p className="text-lg md:text-xl text-gray-100 mb-4">
           Mastering full-stack web development, I bridge the digital realm with the tangible through IoT and firmware
