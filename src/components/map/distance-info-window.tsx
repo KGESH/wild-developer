@@ -10,8 +10,11 @@ type Props = {
 export default function DistanceInfoWindow({ distanceKm, ownerPos, clientPos }: Props) {
   const betweenCenterPos = getBetweenPos(ownerPos, clientPos);
   const isMobile = window.innerWidth <= 768;
+  // Todo: fix window info bug
+  const visible = false;
 
   return (
+    visible &&
     !isMobile && (
       <ReactGoogleMap.InfoWindowF
         position={betweenCenterPos}
