@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import GoogleMap from '@/components/map/google-map';
 import { Location } from '@/app/(home)/api/service';
 import GoogleMapWithMarkers from '@/components/map/google-map-wrapper';
 
