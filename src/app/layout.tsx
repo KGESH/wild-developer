@@ -10,7 +10,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html className="!scroll-smooth">
-      <body className="flex flex-col h-screen">
+      <body
+        className="flex flex-col h-screen m-0 p-0"
+        style={{
+          backgroundColor: '#081b29',
+        }}
+      >
         <Navbar />
         {children}
       </body>
