@@ -1,7 +1,7 @@
 'use client';
 
 import GoogleMap from '@/components/map/google-map';
-import { Location } from '@/app/(home)/api/service';
+import { Location } from '@/components/api/service';
 import { useState } from 'react';
 import { useClientGeolocation } from '@/hooks/use-client-geolocation';
 import StyledButton from '@/components/button/styled-button';

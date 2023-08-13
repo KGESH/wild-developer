@@ -1,4 +1,4 @@
-import { Location } from '@/app/(home)/api/service';
+import { Location } from '@/components/api/service';
 import { useEffect, useState } from 'react';
 
 type Props = {
@@ -10,8 +10,16 @@ type Props = {
 };
 export const usePolylineZoomOut = ({ googleMap, ownerPos, clientPos, clickedCount, closeLoadingModal }: Props) => {
   const [isPolylineLoaded, setIsPolylineLoaded] = useState(false);
-  const onPolylineLoad = () => {
+  const [distanceKm, setDistanceKm] = useState('');
+  const [isDistanceInfoLoaded, setIsDistanceInfoLoaded] = useState(false);
+
+  const onPolylineLoad = (polyline: google.maps.Polyline) => {
+    const showKm = (polylineInMeter: number) => (polylineInMeter / 1000).toFixed(2);
+    const locations = polyline.getPath().getArray();
+    const polylineInMeter = google.maps.geometry.spherical.computeDistanceBetween(locations[0], locations[1]);
+
     setIsPolylineLoaded(true);
+    setDistanceKm(showKm(polylineInMeter));
     closeLoadingModal();
   };
 
@@ -21,8 +29,9 @@ export const usePolylineZoomOut = ({ googleMap, ownerPos, clientPos, clickedCoun
       bounds.extend(ownerPos);
       bounds.extend(clientPos);
       googleMap.fitBounds(bounds);
+      setIsDistanceInfoLoaded(true);
     }
   }, [clientPos, isPolylineLoaded, clickedCount]);
 
-  return { isPolylineLoaded, onPolylineLoad };
+  return { isPolylineLoaded, onPolylineLoad, distanceKm, isDistanceInfoLoaded };
 };
