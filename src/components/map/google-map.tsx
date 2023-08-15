@@ -52,7 +52,7 @@ export default function GoogleMap({
   });
 
   return isLoaded ? (
-    <div className="w-2/3" style={{ height: `768px` }}>
+    <div className="w-full sm:w-2/3" style={{ height: `768px` }}>
       <ReactGoogleMap.GoogleMap
         id="google-map"
         mapContainerStyle={containerStyle}
@@ -119,7 +119,7 @@ export default function GoogleMap({
     </div>
   ) : (
     // Display when google map loading ...
-    <div className="w-2/3" style={{ height: `768px` }}>
+    <div className="w-full sm:w-2/3" style={{ height: `768px` }}>
       <MapLoadingSpinner />
     </div>
   );

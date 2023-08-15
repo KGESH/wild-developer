@@ -6,23 +6,29 @@ export const useClientGeolocation = () => {
 
   const getClientLocation = () => {
     const getGeolocation = () =>
-      navigator.geolocation.getCurrentPosition((position) => {
-        setClientLocation({
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
-        });
-      });
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setClientLocation({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          });
+        },
+        (error) => console.log(`getCurrentPosition: `, error),
+      );
 
     if (navigator.geolocation) {
-      navigator.permissions.query({ name: 'geolocation' }).then((permission) => {
-        if (permission.state === 'denied') return;
+      navigator.permissions.query({ name: 'geolocation' }).then(
+        (permission) => {
+          if (permission.state === 'denied') return;
 
-        getGeolocation();
+          getGeolocation();
 
-        permission.addEventListener('change', (e) => {
-          if (permission.state === 'granted') getGeolocation();
-        });
-      });
+          permission.addEventListener('change', (e) => {
+            if (permission.state === 'granted') getGeolocation();
+          });
+        },
+        (error) => console.log(`query: `, error),
+      );
     } else {
       console.log('Geolocation is not supported by this browser.');
     }

@@ -23,7 +23,6 @@ export default function GoogleMapWithMarkers({ ownerLocation }: Props) {
 
   return (
     <>
-      {/*<button className="w-60 h-52 bg-amber-500" onClick={onFindMeClick}>*/}
       {/*  find me*/}
       {/*</button>*/}
       <StyledButton className="mb-5" onClick={onFindMeClick}>
