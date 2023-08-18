@@ -109,9 +109,9 @@ export default function GoogleMap({
         )}
 
         {/*Polyline info message*/}
-        {/*{isPolylineLoaded && clientPos && (*/}
-        {/*  <DistanceInfoWindow distanceKm={distanceKm} ownerPos={ownerPos} clientPos={clientPos} />*/}
-        {/*)}*/}
+        {isPolylineLoaded && clientPos && (
+          <DistanceInfoWindow distanceKm={distanceKm} ownerPos={ownerPos} clientPos={clientPos} />
+        )}
 
         {/*Polyline Loading spinner*/}
         {isButtonClicked && !isPolylineLoaded && <MapInfoLoadingSpinner centerPos={centerPos} />}
