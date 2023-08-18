@@ -10,8 +10,8 @@ import DistanceInfoWindow from '@/components/map/distance-info-window';
 const ownerNickname = 'Wild Developer';
 const clientNickname = 'You';
 
-const redIcon = 'http://maps.google.com/mapfiles/ms/micons/red.png';
-const blueIcon = 'http://maps.google.com/mapfiles/ms/micons/blue.png';
+const redIcon = 'https://maps.google.com/mapfiles/ms/micons/red.png';
+const blueIcon = 'https://maps.google.com/mapfiles/ms/micons/blue.png';
 
 const containerStyle = {
   width: '100%',
