@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import GoogleMapWithMarkers from '@/components/map/google-map-wrapper';
-import OwnerClock from '@/components/clock/owner-clock';
+// import OwnerClock from '@/components/clock/owner-clock';
 import { getLatestLocation } from '@/components/api/service';
 
 export const metadata: Metadata = {
