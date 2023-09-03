@@ -1,4 +1,3 @@
-'use server';
 import * as GeoTZ from 'geo-tz';
 import { Location } from '@/components/api/service';
 
