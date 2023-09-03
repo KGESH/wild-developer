@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { findMeButtonId } from '@/components/map/google-map.types';
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
         </p>
         <div className="flex flex-col md:flex-row justify-between w-full md:w-2/3 space-y-4 md:space-y-0 md:space-x-24 mx-auto">
           <Link
-            href="#google-map"
+            href={`#${findMeButtonId}`}
             className="flex justify-center items-center text-2xl md:text-3xl text-gray-100 w-full md:w-1/2 h-12 md:h-14 border-2 rounded-lg bg-blue-500 border-blue-500 font-normal"
           >
             Where am I
@@ -26,7 +27,6 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      <div className="flex-2"></div>
     </section>
   );
 }

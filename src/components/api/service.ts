@@ -13,11 +13,11 @@ export const getLatestLocation = async () => {
   const { data: location } = await supabase
     .from('locations')
     .select()
-    .limit(1)
     .order('created_at', { ascending: false })
+    .limit(1)
     .single();
 
-  return location;
+  return location as Location;
 };
 
 export const createLocation = async (location: Location) => {

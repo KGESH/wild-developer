@@ -5,10 +5,12 @@ import { Location } from '@/components/api/service';
 import { useState } from 'react';
 import { useClientGeolocation } from '@/hooks/use-client-geolocation';
 import StyledButton from '@/components/button/styled-button';
+import { findMeButtonId } from '@/components/map/google-map.types';
 
 type Props = {
   ownerLocation: Location;
 };
+
 export default function GoogleMapWithMarkers({ ownerLocation }: Props) {
   const { clientLocation, getClientLocation } = useClientGeolocation();
   const [isButtonClicked, setIsButtonClicked] = useState(false);
@@ -23,9 +25,8 @@ export default function GoogleMapWithMarkers({ ownerLocation }: Props) {
 
   return (
     <>
-      {/*  find me*/}
-      {/*</button>*/}
-      <StyledButton className="mb-5" onClick={onFindMeClick}>
+      {/* find me */}
+      <StyledButton id={findMeButtonId} className="mb-5" onClick={onFindMeClick}>
         🌎 Find me
       </StyledButton>
       <GoogleMap
